@@ -27,10 +27,14 @@ panas-lembab, budaya dupe/decant).
 Aturan emas rekomendasi: **fakta dari DB, penalaran dari LLM.** LLM tidak pernah "mencari"
 parfum sendiri (mencegah halusinasi) — ia hanya menjelaskan kandidat yang sudah diambil DB.
 
-## UI
+## UI — modern playful (mobile-first)
 
-Pakai `DESIGN.md` (design system Apple) untuk semua kerja UI: whitespace lega, tipografi
-bersih, restraint. Komponen dari shadcn/ui + Tailwind.
+Bahasa desain: **modern playful**. Font Plus Jakarta Sans. Warna brand biru (logo) + gradient
+"aura" biru→violet→pink (token `--aura`). Utility di `globals.css`: `.text-aura` (teks gradient),
+`.bg-aura` (bg gradient CTA), `.shadow-soft`, `.shadow-glow`, `.animate-float`. Sudut membulat
+(rounded-2xl/3xl), shadow lembut, animasi hover/scale. Komponen bersama: `SiteLogo` (header) &
+`SiteFooter` (nav + kredit + sosial). Tailwind + shadcn Slider (satu-satunya komponen shadcn tersisa).
+`DESIGN.md` (Apple) hanya arsip — bukan panduan aktif lagi.
 
 ## Design guidelines (Karpathy)
 

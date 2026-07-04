@@ -44,7 +44,7 @@ export function PerfumePicker({
                 key={id}
                 type="button"
                 onClick={() => onChange(value.filter((x) => x !== id))}
-                className="flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1.5 text-sm text-secondary-foreground"
+                className="flex items-center gap-1.5 rounded-full bg-accent px-3.5 py-2 text-sm font-semibold text-accent-foreground transition active:scale-95"
               >
                 {p.brand} {p.name}
                 <span className="text-muted-foreground">×</span>
@@ -60,21 +60,21 @@ export function PerfumePicker({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={placeholder}
-            className="w-full rounded-full border border-border bg-card px-5 py-3 text-[15px] outline-none focus:border-foreground/30"
+            className="w-full rounded-2xl border-2 border-border bg-card px-5 py-3.5 text-[15px] font-medium outline-none transition focus:border-primary/40"
           />
           {matches.length > 0 && (
-            <div className="mt-2 grid gap-1.5">
+            <div className="mt-2 grid gap-2">
               {matches.map((p) => (
                 <button
                   key={p.id}
                   type="button"
                   onClick={() => add(p.id)}
-                  className="flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-left text-sm transition hover:border-foreground/30"
+                  className="flex items-center justify-between rounded-2xl border border-border bg-card px-4 py-3 text-left text-sm transition hover:border-primary/30 hover:shadow-soft"
                 >
-                  <span>
+                  <span className="font-semibold">
                     <span className="text-muted-foreground">{p.brand}</span> {p.name}
                   </span>
-                  <span className="text-xs text-muted-foreground">{p.priceIDR}</span>
+                  <span className="shrink-0 text-xs text-muted-foreground">{p.priceIDR}</span>
                 </button>
               ))}
             </div>
