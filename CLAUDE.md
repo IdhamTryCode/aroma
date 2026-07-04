@@ -22,6 +22,7 @@ panas-lembab, budaya dupe/decant).
 - `AROMA_LLM_API_KEY` — kunci LLM. Tanpa ini, penjelasan pakai fallback rule-based.
 - `AROMA_LLM_BASE_URL` — default `https://api.moonshot.ai/v1` (OpenAI-compatible).
 - `AROMA_LLM_MODEL` — default `moonshot-v1-8k` (cepat ~5s). Alternatif Kimi: `kimi-k2.5` (~34s, reasoning). `kimi-k2.6` >60s (terlalu lambat untuk request sinkron).
+- `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` — storage hasil `/hasil/[id]` + rate-limit `/api/recommend`. Diisi → Redis (wajib di Vercel). Kosong → fallback file `.aroma-data/` (dev). Lihat `lib/store.ts`.
 
 Aturan emas rekomendasi: **fakta dari DB, penalaran dari LLM.** LLM tidak pernah "mencari"
 parfum sendiri (mencegah halusinasi) — ia hanya menjelaskan kandidat yang sudah diambil DB.
