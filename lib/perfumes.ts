@@ -1,4 +1,5 @@
 import type { AccordVector } from "./accords";
+import { IMPORTED_PERFUMES } from "./perfumes.generated";
 
 // ============================================================================
 // Knowledge base (seed). Tiap parfum = vektor accord (DNA) + notes + atribut.
@@ -32,7 +33,7 @@ export interface Perfume {
   dupeOf?: string;
 }
 
-export const PERFUMES: Perfume[] = [
+const CURATED: Perfume[] = [
   {
     id: "sauvage",
     name: "Sauvage EDT",
@@ -1716,6 +1717,13 @@ export const PERFUMES: Perfume[] = [
     blurb: "Mawar-kayu-cumin yang uniseks & 'nggak kecewekan'. Mawar buat semua gender.",
   },
 ];
+
+/**
+ * Katalog lengkap: CURATED (premium — accord dikurasi manual, harga IDR & blurb
+ * Indonesia) + IMPORTED_PERFUMES (top populer dari Parfumo; accord/notes asli,
+ * harga/gender/blurb estimasi). Curated didahulukan supaya menang saat scoring.
+ */
+export const PERFUMES: Perfume[] = [...CURATED, ...IMPORTED_PERFUMES];
 
 /** Cari parfum berdasarkan id. */
 export function findPerfume(id: string): Perfume | undefined {

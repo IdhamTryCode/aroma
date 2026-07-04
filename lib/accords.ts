@@ -55,21 +55,3 @@ export const ACCORD_LABELS: Record<Accord, string> = {
   animalic: "Animalic / Oud",
   aquatic_ozonic: "Aquatic / Ozonic",
 };
-
-/** Accord yang cenderung "berat" di iklim tropis panas-lembab (dipakai reranking). */
-export const HEAVY_IN_HEAT: Accord[] = [
-  "gourmand",
-  "sweet",
-  "vanilla",
-  "ambery",
-  "leather",
-  "animalic",
-];
-
-/** Accord yang "aman & nyaman" di panas (dipakai reranking). */
-export const HEAT_FRIENDLY: Accord[] = [
-  "citrus",
-  "fresh",
-  "aquatic_ozonic",
-  "aromatic",
-];
