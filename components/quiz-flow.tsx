@@ -68,9 +68,9 @@ export function QuizFlow() {
   if (loading) {
     return (
       <div className="flex min-h-[100dvh] flex-col items-center justify-center gap-5 px-6 text-center">
-        <div className="h-14 w-14 animate-spin rounded-full border-4 border-secondary border-t-[#7c3aed]" />
+        <div className="h-14 w-14 animate-spin rounded-full border-4 border-secondary border-t-primary" />
         <div>
-          <p className="text-xl font-extrabold tracking-tight">Meracik DNA aromamu… ✨</p>
+          <p className="text-xl font-semibold tracking-tight">Meracik DNA aromamu…</p>
           <p className="mt-1 text-sm text-muted-foreground">Mencocokkan seleramu ke ratusan parfum.</p>
         </div>
       </div>
@@ -129,8 +129,8 @@ export function QuizFlow() {
                     onClick={() => (question.type === "multi" ? toggleMulti(opt.id) : setSingle(opt.id))}
                     className={`flex items-center gap-3 rounded-2xl border-2 px-5 py-4 text-left text-[15px] transition active:scale-[0.98] ${
                       selected
-                        ? "border-transparent bg-accent shadow-soft ring-2 ring-[#7c3aed]/40"
-                        : "border-border bg-card hover:border-primary/30 hover:shadow-soft"
+                        ? "border-primary bg-accent shadow-soft"
+                        : "border-border bg-card hover:border-primary/40 hover:shadow-soft"
                     }`}
                   >
                     {opt.emoji && <span className="text-2xl">{opt.emoji}</span>}
@@ -165,7 +165,7 @@ export function QuizFlow() {
           disabled={!answered()}
           className="rounded-full bg-aura px-8 py-3 text-base font-bold text-white shadow-glow transition hover:scale-[1.03] active:scale-95 disabled:pointer-events-none disabled:opacity-40 disabled:shadow-none"
         >
-          {isLast ? "Lihat hasil ✨" : anchorEmpty ? "Lewati" : "Lanjut"}
+          {isLast ? "Lihat hasil" : anchorEmpty ? "Lewati" : "Lanjut"}
         </button>
       </div>
 

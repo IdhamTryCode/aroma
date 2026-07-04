@@ -51,7 +51,7 @@ export function Results({ data }: { data: RecommendResponse }) {
 
       <main className="mx-auto w-full max-w-2xl flex-1 px-5 py-10">
         {/* DNA summary */}
-        <p className="text-sm font-bold tracking-wide text-aura">✨ DNA AROMA KAMU</p>
+        <p className="text-sm font-semibold tracking-wide text-aura">DNA AROMA KAMU</p>
         <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
           {explanation.dnaSummary}
         </h1>
@@ -68,7 +68,7 @@ export function Results({ data }: { data: RecommendResponse }) {
         </p>
         {profile.anchors.length > 0 && (
           <p className="mt-1 text-xs font-medium text-muted-foreground">
-            💙 Berdasarkan kesukaanmu:{" "}
+            Berdasarkan kesukaanmu:{" "}
             {profile.anchors.map((id) => findPerfume(id)?.name).filter(Boolean).join(", ")}
           </p>
         )}

@@ -36,7 +36,7 @@ const GENDER_LABEL: Record<Perfume["gender"], string> = {
 };
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
-  return <h2 className="text-sm font-bold tracking-wide text-aura">{children}</h2>;
+  return <h2 className="font-sans text-sm font-semibold tracking-wide text-aura">{children}</h2>;
 }
 
 function Meter({ label, value }: { label: string; value: number }) {
@@ -134,7 +134,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ id: st
 
         {/* Notes pyramid */}
         <section className="mt-12">
-          <SectionLabel>🔺 PIRAMIDA NOTES</SectionLabel>
+          <SectionLabel>PIRAMIDA NOTES</SectionLabel>
           <div className="mt-3">
             <NoteRow label="Atas" notes={p.notes.top} />
             <NoteRow label="Tengah" notes={p.notes.heart} />
@@ -144,7 +144,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ id: st
 
         {/* DNA bars */}
         <section className="mt-12">
-          <SectionLabel>🧬 DNA AROMA</SectionLabel>
+          <SectionLabel>DNA AROMA</SectionLabel>
           <div className="mt-4 space-y-3">
             {accords.map((a) => (
               <div key={a} className="flex items-center gap-3">
@@ -165,7 +165,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ id: st
         {/* Dupes */}
         {dupes.length > 0 && (
           <section className="mt-12">
-            <SectionLabel>💸 ALTERNATIF LEBIH HEMAT</SectionLabel>
+            <SectionLabel>ALTERNATIF LEBIH HEMAT</SectionLabel>
             <div className="mt-4 space-y-3">
               {dupes.map((m) => (
                 <PerfumeLink key={m.perfume.id} p={m.perfume} note={`${Math.round(m.similarity * 100)}% mirip DNA`} />
@@ -176,7 +176,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ id: st
 
         {/* Similar */}
         <section className="mt-12">
-          <SectionLabel>✨ MIRIP DENGAN INI</SectionLabel>
+          <SectionLabel>MIRIP DENGAN INI</SectionLabel>
           <div className="mt-4 space-y-3">
             {similar.map((m) => (
               <PerfumeLink key={m.perfume.id} p={m.perfume} note={`${Math.round(m.similarity * 100)}% mirip DNA`} />
@@ -187,9 +187,9 @@ export default async function PerfumePage({ params }: { params: Promise<{ id: st
         <div className="mt-14 flex justify-center">
           <Link
             href="/quiz"
-            className="rounded-full bg-aura px-8 py-3.5 text-base font-bold text-white shadow-glow transition hover:scale-[1.03] active:scale-95"
+            className="rounded-full bg-aura px-8 py-3.5 text-base font-semibold text-white shadow-glow transition hover:scale-[1.02] active:scale-95"
           >
-            Cari parfum yang cocok untukku 🚀
+            Cari parfum yang cocok untukku
           </Link>
         </div>
       </main>

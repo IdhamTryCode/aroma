@@ -29,9 +29,9 @@ export function ShareButton() {
     <button
       type="button"
       onClick={share}
-      className="rounded-full bg-aura px-6 py-2.5 text-sm font-bold text-white shadow-glow transition hover:scale-105 active:scale-95"
+      className="rounded-full bg-aura px-6 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:scale-105 active:scale-95"
     >
-      {copied ? "Link disalin ✓" : "Bagikan hasil ✨"}
+      {copied ? "Link disalin ✓" : "Bagikan hasil"}
     </button>
   );
 }

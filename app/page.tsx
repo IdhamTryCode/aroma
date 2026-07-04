@@ -4,7 +4,13 @@ import { SiteLogo } from "@/components/site-logo";
 import { SiteFooter } from "@/components/site-footer";
 
 const CTA =
-  "inline-flex items-center justify-center rounded-full bg-aura px-7 py-3.5 text-base font-bold text-white shadow-glow transition hover:scale-[1.03] active:scale-95";
+  "inline-flex items-center justify-center rounded-full bg-aura px-8 py-3.5 text-base font-semibold text-white shadow-glow transition hover:scale-[1.02] active:scale-95";
+
+const STATS = [
+  { value: "500+", label: "parfum populer" },
+  { value: "AI", label: "analisis personal" },
+  { value: "2 mnt", label: "langsung dapat" },
+];
 
 const VALUE_PROPS = [
   { icon: "🧬", title: "Dicocokkan by DNA", body: "Seleramu jadi vektor 20 accord, lalu dicocokkan ke ratusan parfum. Bukan tebak-tebakan." },
@@ -14,16 +20,16 @@ const VALUE_PROPS = [
 ];
 
 const STEPS = [
-  { n: "01", emoji: "💬", title: "Ceritakan seleramu", body: "Jawab 7 pertanyaan singkat soal vibe, suasana, dan wangi yang bikin kamu nyaman." },
-  { n: "02", emoji: "🧠", title: "Kami baca DNA-nya", body: "Jawabanmu diterjemahkan jadi vektor 20 accord — sidik jari aroma yang kamu cari." },
-  { n: "03", emoji: "✨", title: "Dapat rekomendasi", body: "Parfum paling cocok untukmu, lengkap dengan alasan personal dan alternatif hemat." },
+  { n: "01", title: "Ceritakan seleramu", body: "Jawab 7 pertanyaan singkat soal vibe, suasana, dan wangi yang bikin kamu nyaman." },
+  { n: "02", title: "Kami baca DNA-nya", body: "Jawabanmu diterjemahkan jadi vektor 20 accord — sidik jari aroma yang kamu cari." },
+  { n: "03", title: "Dapat rekomendasi", body: "Parfum paling cocok untukmu, lengkap dengan alasan personal dan alternatif hemat." },
 ];
 
 const FAQ = [
   { q: "Gratis?", a: "Ya. Kuis dan rekomendasi sepenuhnya gratis, tanpa perlu daftar akun." },
   { q: "Harus sudah punya parfum favorit?", a: "Nggak. Kalau punya, hasil makin akurat — kalau belum, tinggal lewati pertanyaannya." },
-  { q: "Seakurat apa?", a: "Kami cocokkan berbasis DNA aroma + preferensimu, bukan iklan. Makin jujur jawabanmu, makin pas." },
-  { q: "Berapa banyak parfumnya?", a: "Ratusan, dari designer, niche, sampai alternatif terjangkau — dan terus bertambah." },
+  { q: "Seakurat apa?", a: "Kami cocokkan berbasis DNA aroma + preferensimu, dianalisis AI — bukan iklan. Makin jujur jawabanmu, makin pas." },
+  { q: "Berapa banyak parfumnya?", a: "Lebih dari 500 parfum populer — dari designer, niche, sampai alternatif terjangkau — dan terus bertambah." },
 ];
 
 const SAMPLE_ACCORDS = ["Vanila", "Manis", "Rempah Hangat", "Amber", "Woody"];
@@ -42,7 +48,7 @@ export default function Home() {
             <Link href="/dupe" className="hidden rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-secondary hover:text-foreground sm:block">
               Cari dupe
             </Link>
-            <Link href="/quiz" className="rounded-full bg-aura px-5 py-2 text-sm font-bold text-white shadow-glow transition hover:scale-105 active:scale-95">
+            <Link href="/quiz" className="rounded-full bg-aura px-5 py-2 text-sm font-semibold text-white shadow-glow transition hover:scale-105 active:scale-95">
               Mulai
             </Link>
           </nav>
@@ -50,40 +56,39 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden px-5 pb-24 pt-16 text-center sm:pt-24">
-        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
-          <div className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-aura opacity-20 blur-3xl" />
-          <div className="absolute -right-20 top-32 h-80 w-80 rounded-full bg-[#ec4899] opacity-15 blur-3xl" />
-          <div className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-[#0066cc] opacity-10 blur-3xl" />
-        </div>
-
-        <div className="relative mx-auto flex max-w-3xl flex-col items-center">
-          <Image src="/aroma.png" alt="Aroma" width={92} height={92} priority className="animate-float" />
-          <span className="mt-6 rounded-full border border-border bg-card px-4 py-1.5 text-sm font-semibold text-accent-foreground shadow-sm">
-            ✨ Rekomendasi parfum personal
+      <section className="px-5 pb-20 pt-16 text-center sm:pt-24">
+        <div className="mx-auto flex max-w-3xl flex-col items-center">
+          <Image src="/aroma.png" alt="Aroma" width={88} height={88} priority className="animate-float" />
+          <span className="mt-6 rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium text-muted-foreground">
+            Rekomendasi parfum personal, ditenagai AI
           </span>
-          <h1 className="mt-6 text-[2.6rem] font-extrabold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
-            Temukan parfum yang <span className="text-aura">paling kamu banget.</span>
+          <h1 className="mt-6 text-[2.7rem] font-semibold leading-[1.03] tracking-tight sm:text-6xl md:text-[4.6rem]">
+            Temukan parfum yang <span className="italic text-aura">paling kamu banget.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
             Isi kuis dua menit. Aroma menerjemahkan seleramu jadi DNA aroma, lalu mencocokkannya ke
             ratusan parfum — lengkap dengan alasannya.
           </p>
-          <div className="mt-9 flex flex-col items-center gap-4">
-            <Link href="/quiz" className={CTA}>
-              Mulai kuis — gratis 🚀
-            </Link>
-            <span className="text-sm font-medium text-muted-foreground">2 menit · 7 pertanyaan · tanpa daftar</span>
+          <Link href="/quiz" className={`mt-9 ${CTA}`}>
+            Mulai kuis, gratis
+          </Link>
+
+          {/* Stats */}
+          <div className="mt-12 grid w-full max-w-md grid-cols-3 divide-x divide-border rounded-2xl border border-border bg-card">
+            {STATS.map((s) => (
+              <div key={s.label} className="px-4 py-5">
+                <div className="font-serif text-2xl font-semibold sm:text-3xl">{s.value}</div>
+                <div className="mt-1 text-xs text-muted-foreground">{s.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Value props */}
-      <section className="bg-secondary/60 px-5 py-20">
+      <section className="bg-secondary/50 px-5 py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-center text-3xl font-extrabold tracking-tight sm:text-4xl">
-            Kenapa <span className="text-aura">Aroma?</span>
-          </h2>
+          <h2 className="text-center text-3xl font-semibold tracking-tight sm:text-4xl">Kenapa Aroma?</h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
             Bukan katalog yang bikin makin bingung. Ini asisten yang benar-benar memahami seleramu.
           </p>
@@ -91,7 +96,7 @@ export default function Home() {
             {VALUE_PROPS.map((v) => (
               <div key={v.title} className="rounded-3xl border border-border bg-card p-6 shadow-soft transition hover:-translate-y-1">
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent text-3xl">{v.icon}</div>
-                <h3 className="mt-4 text-lg font-bold tracking-tight">{v.title}</h3>
+                <h3 className="mt-4 text-lg font-semibold tracking-tight">{v.title}</h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{v.body}</p>
               </div>
             ))}
@@ -102,15 +107,12 @@ export default function Home() {
       {/* How it works */}
       <section className="px-5 py-20">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-center text-3xl font-extrabold tracking-tight sm:text-4xl">Cara kerjanya</h2>
+          <h2 className="text-center text-3xl font-semibold tracking-tight sm:text-4xl">Cara kerjanya</h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {STEPS.map((s) => (
-              <div key={s.n} className="rounded-3xl border border-border bg-card p-6 text-center shadow-soft sm:text-left">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-aura text-3xl shadow-glow sm:mx-0">
-                  {s.emoji}
-                </div>
-                <div className="mt-4 text-sm font-bold text-aura">{s.n}</div>
-                <h3 className="mt-1 text-lg font-bold tracking-tight">{s.title}</h3>
+              <div key={s.n} className="rounded-3xl border border-border bg-card p-6 shadow-soft">
+                <div className="font-serif text-3xl font-semibold text-aura">{s.n}</div>
+                <h3 className="mt-3 text-lg font-semibold tracking-tight">{s.title}</h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{s.body}</p>
               </div>
             ))}
@@ -120,9 +122,9 @@ export default function Home() {
 
       {/* Dupe highlight */}
       <section className="px-5 py-20">
-        <div className="mx-auto max-w-4xl overflow-hidden rounded-[2rem] bg-[#1a1226] p-8 text-white shadow-soft sm:p-12">
-          <p className="text-sm font-bold tracking-wide text-[#f0abfc]">💸 DUPE FINDER</p>
-          <h2 className="mt-3 max-w-2xl text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-[2rem] bg-[#241d15] p-8 text-white shadow-soft sm:p-12">
+          <p className="text-sm font-semibold tracking-wide text-[#d8b892]">DUPE FINDER</p>
+          <h2 className="mt-3 max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl">
             Wangi mewah, harga masuk akal.
           </h2>
           <p className="mt-4 max-w-xl text-white/70">
@@ -132,35 +134,33 @@ export default function Home() {
           <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
             <div className="flex-1 rounded-2xl border border-white/10 bg-white/5 p-5">
               <p className="text-xs text-white/50">Kamu suka</p>
-              <p className="mt-1 font-bold tracking-tight">Creed Aventus</p>
+              <p className="mt-1 font-semibold tracking-tight">Creed Aventus</p>
               <p className="text-sm text-white/50">Rp4jt–6jt</p>
             </div>
             <div className="text-center text-2xl text-white/40">→</div>
-            <div className="flex-1 rounded-2xl border border-[#f0abfc]/30 bg-white/5 p-5">
+            <div className="flex-1 rounded-2xl border border-white/15 bg-white/5 p-5">
               <div className="flex items-center justify-between">
                 <p className="text-xs text-white/50">Alternatifnya</p>
-                <span className="rounded-full bg-aura px-2.5 py-0.5 text-xs font-bold text-white">100% mirip</span>
+                <span className="rounded-full bg-primary px-2.5 py-0.5 text-xs font-semibold text-white">100% mirip</span>
               </div>
-              <p className="mt-1 font-bold tracking-tight">Armaf Club de Nuit Intense</p>
+              <p className="mt-1 font-semibold tracking-tight">Armaf Club de Nuit Intense</p>
               <p className="text-sm text-white/50">Rp300rb–500rb · hemat ~90%</p>
             </div>
           </div>
-          <div className="mt-8">
-            <Link href="/dupe" className="inline-flex rounded-full bg-white px-7 py-3 text-base font-bold text-[#1a1226] transition hover:scale-105 active:scale-95">
-              Coba dupe finder
-            </Link>
-          </div>
+          <Link href="/dupe" className="mt-8 inline-flex rounded-full bg-white px-7 py-3 text-base font-semibold text-[#241d15] transition hover:scale-105 active:scale-95">
+            Coba dupe finder
+          </Link>
         </div>
       </section>
 
       {/* Sample preview */}
-      <section className="bg-secondary/60 px-5 py-20">
+      <section className="bg-secondary/50 px-5 py-20">
         <div className="mx-auto max-w-2xl">
-          <h2 className="text-center text-3xl font-extrabold tracking-tight sm:text-4xl">Ini yang kamu dapat</h2>
+          <h2 className="text-center text-3xl font-semibold tracking-tight sm:text-4xl">Ini yang kamu dapat</h2>
           <p className="mt-3 text-center text-muted-foreground">Sekilas hasil untuk penyuka wangi manis-hangat.</p>
           <div className="mt-10 rounded-3xl border border-border bg-card p-6 shadow-soft">
-            <p className="text-sm font-bold text-aura">DNA Aroma Kamu</p>
-            <p className="mt-2 text-xl font-bold leading-snug tracking-tight">
+            <p className="text-sm font-semibold tracking-wide text-aura">DNA Aroma Kamu</p>
+            <p className="mt-2 font-serif text-2xl font-semibold leading-snug tracking-tight">
               DNA aromamu condong ke vanila, manis, dan rempah hangat — cozy dan bikin nagih.
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
@@ -173,11 +173,11 @@ export default function Home() {
             <div className="mt-6 flex items-start justify-between gap-4 rounded-2xl bg-secondary p-4">
               <div>
                 <p className="text-xs text-muted-foreground">Lattafa</p>
-                <p className="font-bold tracking-tight">Khamrah EDP</p>
+                <p className="font-semibold tracking-tight">Khamrah EDP</p>
                 <p className="mt-1 text-sm text-muted-foreground">Kayu manis-kurma-vanila yang hangat & manis.</p>
               </div>
               <div className="text-right">
-                <div className="text-2xl font-extrabold text-aura">93%</div>
+                <div className="text-2xl font-bold text-aura">93%</div>
                 <div className="text-[11px] text-muted-foreground">cocok</div>
               </div>
             </div>
@@ -188,11 +188,11 @@ export default function Home() {
       {/* FAQ */}
       <section className="px-5 py-20">
         <div className="mx-auto max-w-2xl">
-          <h2 className="text-center text-3xl font-extrabold tracking-tight sm:text-4xl">Pertanyaan umum</h2>
+          <h2 className="text-center text-3xl font-semibold tracking-tight sm:text-4xl">Pertanyaan umum</h2>
           <div className="mt-10 space-y-3">
             {FAQ.map((f) => (
               <div key={f.q} className="rounded-2xl border border-border bg-card p-5 shadow-soft">
-                <h3 className="font-bold tracking-tight">{f.q}</h3>
+                <h3 className="font-semibold tracking-tight">{f.q}</h3>
                 <p className="mt-1.5 text-[15px] leading-relaxed text-muted-foreground">{f.a}</p>
               </div>
             ))}
@@ -203,13 +203,13 @@ export default function Home() {
       {/* Final CTA */}
       <section className="px-5 pb-24 pt-4 text-center">
         <div className="mx-auto flex max-w-xl flex-col items-center">
-          <Image src="/aroma.png" alt="Aroma" width={64} height={64} />
-          <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">
-            Siap ketemu <span className="text-aura">signature scent</span> kamu?
+          <Image src="/aroma.png" alt="Aroma" width={60} height={60} />
+          <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
+            Siap ketemu <span className="italic text-aura">signature scent</span> kamu?
           </h2>
           <p className="mt-3 text-muted-foreground">Dua menit sekarang, hemat berjam-jam bingung di depan rak parfum.</p>
           <Link href="/quiz" className={`mt-8 ${CTA}`}>
-            Mulai kuis — gratis 🚀
+            Mulai kuis, gratis
           </Link>
         </div>
       </section>

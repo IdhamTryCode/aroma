@@ -28,7 +28,7 @@ export function DupeFinder() {
       </header>
 
       <main className="mx-auto w-full max-w-2xl flex-1 px-5 py-10">
-        <p className="text-sm font-bold tracking-wide text-aura">💸 DUPE FINDER</p>
+        <p className="text-sm font-semibold tracking-wide text-aura">DUPE FINDER</p>
         <h1 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Cari alternatif hemat</h1>
         <p className="mt-3 text-muted-foreground">
           Pilih parfum mahal yang kamu suka — kami carikan yang DNA aromanya paling mirip tapi lebih
@@ -84,7 +84,7 @@ export function DupeFinder() {
                         </div>
                         {savings > 0 && (
                           <span className="mt-3 inline-block rounded-full bg-accent px-3 py-1 text-xs font-bold text-accent-foreground">
-                            Hemat sekitar {savings}% 🎉
+                            Hemat sekitar {savings}%
                           </span>
                         )}
                         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.blurb}</p>
