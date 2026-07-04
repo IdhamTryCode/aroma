@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# aroma — hasil survey tersimpan (dev; ganti ke DB untuk produksi)
+/.aroma-data/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
